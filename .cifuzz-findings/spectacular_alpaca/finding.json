@@ -1,0 +1,37 @@
+{
+  "name": "spectacular_alpaca",
+  "type": "CRASH",
+  "input_data": "QGphei5aZXLQ//9/BH9E/38=",
+  "logs": [
+    "== Java Exception: com.code_intelligence.jazzer.api.FuzzerSecurityIssueHigh: Remote Code Execution",
+    "Unrestricted class loading based on externally controlled data may allow",
+    "remote code execution depending on available classes on the classpath.",
+    "\tat jaz.Zer.\u003cclinit\u003e(Zer.java:54)",
+    "\tat java.base/java.lang.Class.forName0(Native Method)",
+    "\tat java.base/java.lang.Class.forName(Class.java:315)",
+    "\tat com.test.ExploreMe.exploreMe(MyTest.java:33)",
+    "\tat com.test.MyTest.myFuzzTest(MyTest.java:19)",
+    "== libFuzzer crashing input ==",
+    "MS: 1 CMP- DE: \"jaz.Zer\"-; base unit: 4c98d54393eafccad15b1b726038ba849f24b6e6",
+    "0x40,0x6a,0x61,0x7a,0x2e,0x5a,0x65,0x72,0xd0,0xff,0xff,0x7f,0x4,0x7f,0x44,0xff,0x7f,",
+    "@jaz.Zer\\320\\377\\377\\177\\004\\177D\\377\\177",
+    "artifact_prefix='./'; Test unit written to .cifuzz-findings\\spectacular_alpaca\\crashing-input",
+    "Base64: QGphei5aZXLQ//9/BH9E/38="
+  ],
+  "details": "Security Issue: Remote Code Execution",
+  "more_details": {
+    "id": "remote_code_execution"
+  },
+  "created_at": "2023-04-24T23:52:54.1462819+08:00",
+  "input_file": ".cifuzz-findings\\spectacular_alpaca\\crashing-input",
+  "stack_trace": [
+    {
+      "SourceFile": "com.test.ExploreMe",
+      "Line": 33,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "exploreMe"
+    }
+  ],
+  "fuzz_test": "com.test.MyTest"
+}
